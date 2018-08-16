@@ -21,3 +21,5 @@ cat.privetstvie();
 dog.privetstvie();
 chicken.privetstvie();
 
+//проверка: является ли объект Animal прототипом объекта cat ==> true/да
+console.log(Animal.isPrototypeOf(cat));
