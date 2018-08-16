@@ -8,18 +8,17 @@ var Animal = {                   //объявлен объект который 
         return this;            //возвращаем имя и возраст
     },
     privetstvie: function(){
-        console.log("Привет меня зовут " + this.name + " я " + this.type + " mne " + this.age + " let");
+        console.log("Привет меня зовут " + this.name + " я " + this.type + " mne " + this.age + " let" + " мой цвет " + this.color);
     }
 };
 
-var cat, dog, chicken
-cat = Object.create(Animal).constructor("Miaut", 10, "кошка");
-dog = Object.create(Animal).constructor("Dars", 30, "собачка");
-chicken = Object.create(Animal).constructor("Petro", 5, "циплёнок");
+var Cat = Object.create(Animal);
 
+Cat.constructor = function(name, age, type, color){
+    Animal.constructor.apply(this, arguments);
+        this.color = color;
+return this;
+}
+
+var cat = Object.create(Cat).constructor("Messi", 10, "кошка", "красный");
 cat.privetstvie();
-dog.privetstvie();
-chicken.privetstvie();
-
-//проверка: является ли объект Animal прототипом объекта cat ==> true/да
-console.log(Animal.isPrototypeOf(cat));
