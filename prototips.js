@@ -13,6 +13,7 @@ var Animal = {                   //объявлен объект который 
 };
 
 var Cat = Object.create(Animal);
+var Dog = Object.create(Animal);
 
 Cat.constructor = function(name, age, type, color){
     Animal.constructor.apply(this, arguments);
@@ -20,5 +21,13 @@ Cat.constructor = function(name, age, type, color){
 return this;
 }
 
+Dog.constructor = function(name, age, type, color){
+    Animal.constructor.apply(this, arguments);
+        this.color = color;
+return this;
+}
+
 var cat = Object.create(Cat).constructor("Messi", 10, "кошка", "красный");
+var dog = Object.create(Dog).constructor("Monny", 15, "собачка", "черный");
 cat.privetstvie();
+dog.privetstvie();
