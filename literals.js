@@ -26,3 +26,11 @@ console.log(server.ip,
             server.host.password,
             "многоуровневый литерал"
         );
+
+//создаём ссылку и передаём по ней объект
+var urlka = server
+console.log(urlka.ip,
+            urlka.host.user,
+            urlka.host.password,
+            "urlka стала ссылкой на объект server"
+        );
