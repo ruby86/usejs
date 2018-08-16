@@ -1,9 +1,23 @@
 //создание прототипов
 
 var Animal = {                   //объявлен объект который будет прототипом для всех остальных животных
-    eyes: true,
-    nose: true
+    constructor: function(name, age, type){
+        this.name = name,
+        this.age = age;
+        this.type = type;
+        return this;            //возвращаем имя и возраст
+    },
+    privetstvie: function(){
+        console.log("Привет меня зовут " + this.name + " я " + this.type + " mne " + this.age + " let");
+    }
 };
 
-var cat = Object.create(Animal); //создаём новый объект который унаследует часть данных из прототипа Animal
-console.log(cat.eyes);
+var cat, dog, chicken
+cat = Object.create(Animal).constructor("Miaut", 10, "кошка");
+dog = Object.create(Animal).constructor("Dars", 30, "собачка");
+chicken = Object.create(Animal).constructor("Petro", 5, "циплёнок");
+
+cat.privetstvie();
+dog.privetstvie();
+chicken.privetstvie();
+
