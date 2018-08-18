@@ -5,7 +5,7 @@ var Animal = {                   //объявлен объект который 
         this.name = name,
         this.age = age;
         this.type = type;
-        return this;            //возвращаем имя и возраст
+        return this;            //возвращаем имя и возраст и тип
     },
     privetstvie: function(){
         console.log("Привет меня зовут " + this.name + " я " + this.type + " mne " + this.age + " let" + " мой цвет " + this.color);
